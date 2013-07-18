@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+def creation_message(project_name)
+  m = <<-END
+Project created. Thanks.
+
+  Next Steps:
+
+    cd #{project_name}
+    gem install bundler
+    bundle
+    openskies server
+  END
+end
+
+def syntax_message
+  m = <<-END
+Syntax: openskies new [name_of_project]
+  END
+end
+
+if ARGV.first == "new"
+  project_name = ARGV[1]
+  if project_name
+    puts "Creating new OpenSkies project called #{project_name}..."
+    `git clone git@github.com:enricribas/openskies-template.git #{project_name}`
+    puts creation_message project_name
+  else
+    puts syntax_message
+    puts "requires a project name"
+  end
+else
+  puts syntax_message
+end
+
