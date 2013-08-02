@@ -13,12 +13,16 @@ Project created. Thanks.
   END
 end
 
+def template_project
+  "git@github.com:enricribas/openskies-template.git"
+end
+
 if ARGV.first == "new"
   project_name = ARGV[1]
 
   if project_name
     puts "Creating new OpenSkies project called #{project_name}..."
-    `git clone git@github.com:enricribas/openskies-template.git #{project_name}`
+    `git clone #{template_project} #{project_name}`
     puts creation_message project_name
   else
     puts syntax_message

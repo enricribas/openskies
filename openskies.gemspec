@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform              = Gem::Platform::RUBY
   s.name                  = 'openskies'
-  s.version               = '0.0.6.1'
+  s.version               = '0.0.6.2'
   s.summary               = 'Framework based on Rails for creating web applications'
   s.description           = 'Framework based on Rails for creating web applications'
   s.required_ruby_version = '>= 1.8.7'
